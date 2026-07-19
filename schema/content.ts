@@ -2,18 +2,19 @@ import * as z from "zod";
 
 const nonEmpty = z.string().min(1);
 
-// CR-001..CR-011 required copy present; every strictObject rejects stray keys.
 export const siteSettingsSchema = z.strictObject({
   businessName: nonEmpty,
   whatsappNumber: nonEmpty,
   wechatId: nonEmpty,
   wechatQr: nonEmpty,
-  email: nonEmpty, // real email shape checked separately (CS §6.4), so placeholders pass in dev
+  email: nonEmpty,
   whatsappOpener: nonEmpty,
   reachLine: nonEmpty,
+  tagline: nonEmpty,
 });
 
 export const heroSchema = z.strictObject({
+  eyebrow: nonEmpty,
   headline: nonEmpty,
   subhead: nonEmpty,
   poster: nonEmpty,
@@ -22,13 +23,15 @@ export const heroSchema = z.strictObject({
 
 export const serviceSchema = z.strictObject({ title: nonEmpty, description: nonEmpty });
 export const servicesSchema = z.array(serviceSchema).min(1);
+export const servicesSectionSchema = z.strictObject({ eyebrow: nonEmpty, heading: nonEmpty, closing: nonEmpty });
 
 export const eventTypeSchema = z.strictObject({ title: nonEmpty, description: nonEmpty });
 // CR-007 / D-13: exactly four event types.
 export const eventTypesSchema = z.array(eventTypeSchema).length(4);
+export const eventTypesSectionSchema = z.strictObject({ eyebrow: nonEmpty, intro: nonEmpty });
 
-// BR-003 / CR-009: strict => no category/grouping field. NFR-005: video requires poster.
-// BR-004 / BR-007: consentConfirmed literally true. ACC-004 / SEO-003: non-empty alt.
+// BR-003 / CR-009: strict => no category. NFR-005: video requires poster.
+// BR-004 / BR-007: consentConfirmed true. ACC-004 / SEO-003: non-empty alt.
 const photoItemSchema = z.strictObject({
   type: z.literal("photo"),
   src: nonEmpty,
@@ -46,11 +49,21 @@ const videoItemSchema = z.strictObject({
 });
 export const portfolioItemSchema = z.discriminatedUnion("type", [photoItemSchema, videoItemSchema]);
 export const portfolioSchema = z.array(portfolioItemSchema);
+export const portfolioTeaserSchema = z.strictObject({ eyebrow: nonEmpty, line: nonEmpty });
+export const portfolioIntroSchema = z.strictObject({ eyebrow: nonEmpty, heading: nonEmpty, lede: nonEmpty });
 
-export const aboutSchema = z.strictObject({ heading: nonEmpty, body: nonEmpty });
+export const aboutSchema = z.strictObject({ heading: nonEmpty, body: nonEmpty, dualBaseLine: nonEmpty });
 export const geographicReachSchema = z.strictObject({ heading: nonEmpty, body: nonEmpty });
-export const credibilitySchema = z.strictObject({ heading: nonEmpty, points: z.array(nonEmpty).min(1) });
+export const credibilitySchema = z.strictObject({
+  eyebrow: nonEmpty,
+  heading: nonEmpty,
+  body: nonEmpty,
+  points: z.array(z.strictObject({ title: nonEmpty, body: nonEmpty })).min(1),
+});
 export const privacySchema = z.strictObject({ heading: nonEmpty, body: nonEmpty });
+
+export const contactBandSchema = z.strictObject({ eyebrow: nonEmpty, heading: nonEmpty });
+export const contactPageSchema = z.strictObject({ eyebrow: nonEmpty, heading: nonEmpty, intro: nonEmpty });
 
 const routeSeoSchema = z.strictObject({ title: nonEmpty, description: nonEmpty, ogImage: nonEmpty });
 export const seoSchema = z.strictObject({
@@ -65,24 +78,36 @@ export const siteContentSchema = z.strictObject({
   siteSettings: siteSettingsSchema,
   hero: heroSchema,
   services: servicesSchema,
+  servicesSection: servicesSectionSchema,
   eventTypes: eventTypesSchema,
+  eventTypesSection: eventTypesSectionSchema,
   portfolio: portfolioSchema,
+  portfolioTeaser: portfolioTeaserSchema,
+  portfolioIntro: portfolioIntroSchema,
   about: aboutSchema,
   geographicReach: geographicReachSchema,
   credibility: credibilitySchema,
   privacy: privacySchema,
+  contactBand: contactBandSchema,
+  contactPage: contactPageSchema,
   seo: seoSchema,
 });
 
 export type SiteSettings = z.infer<typeof siteSettingsSchema>;
 export type Hero = z.infer<typeof heroSchema>;
 export type Service = z.infer<typeof serviceSchema>;
+export type ServicesSection = z.infer<typeof servicesSectionSchema>;
 export type EventType = z.infer<typeof eventTypeSchema>;
+export type EventTypesSection = z.infer<typeof eventTypesSectionSchema>;
 export type PortfolioItem = z.infer<typeof portfolioItemSchema>;
+export type PortfolioTeaser = z.infer<typeof portfolioTeaserSchema>;
+export type PortfolioIntro = z.infer<typeof portfolioIntroSchema>;
 export type About = z.infer<typeof aboutSchema>;
 export type GeographicReach = z.infer<typeof geographicReachSchema>;
 export type Credibility = z.infer<typeof credibilitySchema>;
 export type Privacy = z.infer<typeof privacySchema>;
+export type ContactBand = z.infer<typeof contactBandSchema>;
+export type ContactPage = z.infer<typeof contactPageSchema>;
 export type Seo = z.infer<typeof seoSchema>;
 export type SiteContent = z.infer<typeof siteContentSchema>;
 
@@ -123,7 +148,6 @@ export function scanForPlaceholders(input: unknown): PlaceholderHit[] {
   return hits;
 }
 
-// CS §6.4: real contact-shape checks apply only to non-placeholder values.
 export function contactShapeErrors(settings: SiteSettings): string[] {
   const errors: string[] = [];
   if (!isPlaceholderValue(settings.email) && !z.email().safeParse(settings.email).success) {

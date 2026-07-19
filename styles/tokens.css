@@ -1,10 +1,31 @@
-/* tokens.css — DEVELOPMENT PLACEHOLDER VALUES ONLY.
-   Not approved brand tokens. Final colours/typography come from
-   owner-supplied brand assets (project-overview §D-25 #7).
-   Nothing here is a business/brand decision. */
+/* tokens.css — VISUAL DIRECTION PLACEHOLDERS (CS §7 / D-10 / §P3-12).
+   Palette ported from prototype.html; type faces are system placeholders.
+   Final colours + typefaces are pending the owner's brand assets (PO §D-25 #7)
+   and are governed by the placeholder policy (CS §6.8). Not final brand values. */
 :root {
-  --color-bg: #ffffff;
-  --color-fg: #1a1a1a;
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --space-unit: 8px;
+  --bg: #0A0A0B;
+  --surface: #141416;
+  --raised: #1C1C1F;
+  --line: #2A2A2E;
+  --text: #F5F3EF;
+  --muted: #A8A6A1;
+  --faint: #6E6C68;
+  --gold: #C8A96A;
+  --gold-deep: #A8874B;
+
+  /* Placeholder faces pending brand assets — editorial serif/clean sans direction (D-10). */
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --maxw: 1200px;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --space-8: 128px;
 }

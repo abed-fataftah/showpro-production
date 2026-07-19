@@ -1,0 +1,18 @@
+.cta, .ctaLg {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--sans);
+  font-weight: 500;
+  color: var(--bg);
+  background: var(--gold);
+  border-radius: 999px;
+  transition: background-color 0.2s var(--ease);
+}
+.cta { padding: 10px 18px; font-size: 0.95rem; }
+.ctaLg { padding: 15px 30px; font-size: 1.05rem; }
+.cta:hover, .ctaLg:hover { background: var(--gold-deep); }
+.dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--bg); opacity: 0.55;
+}

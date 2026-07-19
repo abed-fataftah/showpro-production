@@ -8,4 +8,5 @@ export const siteSettings = {
   email: "hello@[businessname].com",
   whatsappOpener: "[PLACEHOLDER] Enquiry opener pending owner sign-off (COPY-003).",
   reachLine: "[PLACEHOLDER] Reach line pending owner sign-off (COPY-003).",
+  tagline: "[PLACEHOLDER] Footer tagline pending owner sign-off (COPY-003).",
 } as const satisfies SiteSettings;

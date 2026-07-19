@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "../styles/global.css";
+import { Header } from "../components/Header/Header";
+import { Footer } from "../components/Footer/Footer";
 
 export const metadata: Metadata = {
-  title: "Development scaffold verification",
-  description: "F-001 scaffold — non-release development build.",
+  title: "Development preview",
+  description: "Static-sections preview build — placeholder content, not for release.",
 };
 
 export default function RootLayout({
@@ -13,7 +15,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

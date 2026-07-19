@@ -1,0 +1,29 @@
+.footer {
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  margin-top: var(--space-8);
+}
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-block: var(--space-6);
+}
+.tagline {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--text);
+  margin: 0;
+}
+.links, .channels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.links a:hover, .channels a:hover { color: var(--text); }
+.reach, .copy { margin: 0; color: var(--faint); font-size: 0.85rem; }

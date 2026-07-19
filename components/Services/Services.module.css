@@ -1,0 +1,8 @@
+.section { padding-block: var(--space-7); }
+.list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.item { display: flex; gap: var(--space-4); padding-block: var(--space-4); border-top: 1px solid var(--line); }
+.item:last-of-type { border-bottom: 1px solid var(--line); }
+.num { font-family: var(--serif); color: var(--gold); font-size: 1.1rem; min-width: 2.5ch; }
+.title { margin: 0 0 var(--space-1); }
+.desc { margin: 0; max-width: 60ch; }
+.closing { margin-top: var(--space-5); color: var(--text); font-size: 1.05rem; max-width: 55ch; }

@@ -1,0 +1,10 @@
+.head { max-width: 720px; margin-bottom: var(--space-5); }
+.eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-3);
+}
+.title { margin: 0; }

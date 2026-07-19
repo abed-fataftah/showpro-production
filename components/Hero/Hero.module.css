@@ -1,0 +1,26 @@
+.hero { padding-block: var(--space-8) var(--space-7); }
+.inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-4);
+}
+.headline { margin: 0 0 var(--space-4); }
+.subhead { font-size: 1.1rem; max-width: 40ch; }
+.actions { display: flex; align-items: center; gap: var(--space-4); margin-top: var(--space-5); flex-wrap: wrap; }
+.scrollLink { color: var(--muted); font-size: 0.95rem; }
+.scrollLink:hover { color: var(--text); }
+.media { width: 100%; }
+
+@media (max-width: 820px) {
+  .inner { grid-template-columns: 1fr; }
+  .media { order: -1; }
+}

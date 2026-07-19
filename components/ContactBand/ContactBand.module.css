@@ -1,0 +1,4 @@
+.band { padding-block: var(--space-8); background: var(--surface); border-top: 1px solid var(--line); }
+.inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-4); }
+.eyebrow { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+.heading { margin: 0; max-width: 20ch; }

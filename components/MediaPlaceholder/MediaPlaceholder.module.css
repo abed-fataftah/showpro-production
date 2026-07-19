@@ -1,0 +1,18 @@
+.ph {
+  width: 100%;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-3);
+  background: var(--raised);
+}
+.plum { background: linear-gradient(135deg, #241a24, #14101a); }
+.gold { background: linear-gradient(135deg, #241f16, #14110b); }
+.neutral { background: var(--raised); }
+.tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+  text-transform: uppercase;
+}

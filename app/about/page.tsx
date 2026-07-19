@@ -2,8 +2,9 @@ import { about } from "../../content/about";
 import { geographicReach } from "../../content/geographic-reach";
 import { credibility } from "../../content/credibility";
 import { SectionHeading } from "../../components/SectionHeading/SectionHeading";
+import { routeMetadata } from "../../lib/seo";
 import styles from "../../components/PageIntro/PageIntro.module.css";
-
+export const metadata = routeMetadata("about");
 export default function AboutPage() {
   return (
     <section className={`container ${styles.page}`}>

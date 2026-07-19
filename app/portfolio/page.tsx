@@ -2,7 +2,8 @@ import { portfolioIntro, portfolio } from "../../content/portfolio";
 import { SectionHeading } from "../../components/SectionHeading/SectionHeading";
 import { MediaPlaceholder } from "../../components/MediaPlaceholder/MediaPlaceholder";
 import styles from "../../components/PageIntro/PageIntro.module.css";
-
+import { routeMetadata } from "../../lib/seo";
+export const metadata = routeMetadata("portfolio");
 export default function PortfolioPage() {
   // Real masonry + video tiles arrive with the islands + media phases; static placeholder grid for now.
   const tiles: ReadonlyArray<{ ratio: string; tone: "plum" | "gold" | "neutral" }> = [

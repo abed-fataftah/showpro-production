@@ -1,7 +1,8 @@
 import { privacy } from "../../content/privacy";
 import { SectionHeading } from "../../components/SectionHeading/SectionHeading";
 import styles from "../../components/PageIntro/PageIntro.module.css";
-
+import { routeMetadata } from "../../lib/seo";
+export const metadata = routeMetadata("privacy");
 export default function PrivacyPage() {
   return (
     <section className={`container ${styles.page}`}>

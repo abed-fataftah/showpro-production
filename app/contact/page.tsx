@@ -4,7 +4,8 @@ import { SectionHeading } from "../../components/SectionHeading/SectionHeading";
 import { WhatsAppCTA } from "../../components/WhatsAppCTA/WhatsAppCTA";
 import { CopyButton } from "../../components/client/CopyButton/CopyButton";
 import styles from "../../components/PageIntro/PageIntro.module.css";
-
+import { routeMetadata } from "../../lib/seo";
+export const metadata = routeMetadata("contact");
 export default function ContactPage() {
   const waDigits = siteSettings.whatsappNumber.replace(/[^\d]/g, "");
   return (

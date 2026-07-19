@@ -4,7 +4,8 @@ import { Services } from "../components/Services/Services";
 import { EventTypes } from "../components/EventTypes/EventTypes";
 import { Credibility } from "../components/Credibility/Credibility";
 import { ContactBand } from "../components/ContactBand/ContactBand";
-
+import { routeMetadata } from "../lib/seo";
+export const metadata = routeMetadata("home");
 export default function HomePage() {
   return (
     <>

@@ -1,0 +1,10 @@
+/* tokens.css — DEVELOPMENT PLACEHOLDER VALUES ONLY.
+   Not approved brand tokens. Final colours/typography come from
+   owner-supplied brand assets (project-overview §D-25 #7).
+   Nothing here is a business/brand decision. */
+:root {
+  --color-bg: #ffffff;
+  --color-fg: #1a1a1a;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --space-unit: 8px;
+}

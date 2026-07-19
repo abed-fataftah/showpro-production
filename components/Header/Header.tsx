@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { siteSettings } from "../../content/site-settings";
 import { WhatsAppCTA } from "../WhatsAppCTA/WhatsAppCTA";
+import { MobileMenu } from "../client/MobileMenu/MobileMenu";
 import styles from "./Header.module.css";
 
-// Nav labels are fixed structural copy (CS §6.7), not editable business content.
-// Static shell only: mobile hamburger toggle + scroll-condense are deferred to phase 4 (islands).
+// Server component. The only client JS is the small <MobileMenu /> leaf.
 export function Header() {
   return (
     <header className={styles.header}>
@@ -15,8 +15,9 @@ export function Header() {
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </nav>
-        <div className={styles.cta}>
+        <div className={styles.actions}>
           <WhatsAppCTA />
+          <MobileMenu />
         </div>
       </div>
     </header>

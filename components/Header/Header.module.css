@@ -28,10 +28,10 @@
   font-size: 0.95rem;
 }
 .nav a:hover { color: var(--text); }
-.cta { flex: none; }
+.actions { display: flex; align-items: center; gap: var(--space-3); flex: none; }
 
-/* Nav links hide on small screens until the phase-4 mobile menu island exists;
-   the WhatsApp CTA and wordmark always remain visible (D-03). */
+/* On small screens the inline nav is replaced by the hamburger menu (MobileMenu island);
+   the WhatsApp CTA and wordmark always remain visible in the top bar (D-03). */
 @media (max-width: 640px) {
   .nav { display: none; }
 }

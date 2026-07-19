@@ -2,6 +2,7 @@ import { contactPage } from "../../content/contact";
 import { siteSettings } from "../../content/site-settings";
 import { SectionHeading } from "../../components/SectionHeading/SectionHeading";
 import { WhatsAppCTA } from "../../components/WhatsAppCTA/WhatsAppCTA";
+import { CopyButton } from "../../components/client/CopyButton/CopyButton";
 import styles from "../../components/PageIntro/PageIntro.module.css";
 
 export default function ContactPage() {
@@ -20,23 +21,32 @@ export default function ContactPage() {
       <ul className={styles.channels}>
         <li className={styles.channel}>
           <span className={styles.channelLabel}>WhatsApp</span>
-          <span className={styles.channelValue}>
-            <a href={"https://wa.me/" + waDigits} target="_blank" rel="noopener noreferrer">{siteSettings.whatsappNumber}</a>
+          <span className={styles.channelRow}>
+            <span className={styles.channelValue}>
+              <a href={"https://wa.me/" + waDigits} target="_blank" rel="noopener noreferrer">{siteSettings.whatsappNumber}</a>
+            </span>
+            <CopyButton value={siteSettings.whatsappNumber} label="WhatsApp number" />
           </span>
         </li>
         <li className={styles.channel}>
           <span className={styles.channelLabel}>WeChat</span>
-          <span className={styles.channelValue}>{siteSettings.wechatId}</span>
+          <span className={styles.channelRow}>
+            <span className={styles.channelValue}>{siteSettings.wechatId}</span>
+            <CopyButton value={siteSettings.wechatId} label="WeChat ID" />
+          </span>
         </li>
         <li className={styles.channel}>
           <span className={styles.channelLabel}>Email</span>
-          <span className={styles.channelValue}>
-            <a href={"mailto:" + siteSettings.email}>{siteSettings.email}</a>
+          <span className={styles.channelRow}>
+            <span className={styles.channelValue}>
+              <a href={"mailto:" + siteSettings.email}>{siteSettings.email}</a>
+            </span>
+            <CopyButton value={siteSettings.email} label="Email address" />
           </span>
         </li>
       </ul>
 
-      <p className={styles.note}>Copy-to-clipboard buttons and scannable QR codes are added in a later phase.</p>
+      <p className={styles.note}>Scannable QR codes are added in a later phase.</p>
     </section>
   );
 }

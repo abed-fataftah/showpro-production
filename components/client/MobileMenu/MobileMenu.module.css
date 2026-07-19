@@ -1,0 +1,44 @@
+.wrap { display: none; position: relative; }
+
+.toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  padding: 0 9px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.bar { display: block; height: 2px; width: 100%; background: var(--text); border-radius: 2px; }
+
+.menu, .menuOpen {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2);
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+.menu { display: none; }
+
+.link {
+  padding: var(--space-3);
+  color: var(--muted);
+  border-radius: 6px;
+  font-size: 0.98rem;
+}
+.link:hover { color: var(--text); background: var(--surface); }
+
+/* Show the hamburger only on small screens; desktop keeps the inline nav from F-003. */
+@media (max-width: 640px) {
+  .wrap { display: block; }
+}

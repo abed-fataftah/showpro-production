@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   title: siteSettings.businessName,
   description: seo.home.description,
   applicationName: siteSettings.businessName,
-  openGraph: { siteName: siteSettings.businessName, type: "website", locale: "en", images: [{ url: "/og/PLACEHOLDER-og.jpg" }] },
+  openGraph: { siteName: siteSettings.businessName, type: "website", locale: "en", images: [{ url: "/og/og.jpg" }] },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
 };

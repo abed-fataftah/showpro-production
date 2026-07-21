@@ -9,24 +9,17 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
         <p className={styles.tagline}>{siteSettings.tagline}</p>
-
         <nav className={styles.links} aria-label="Footer">
           <Link href="/portfolio">Portfolio</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
           <Link href="/privacy">Privacy</Link>
         </nav>
-
         <ul className={styles.channels}>
-          <li>
-            <a href={"https://wa.me/" + waDigits} target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          </li>
-          <li>WeChat: {siteSettings.wechatId}</li>
-          <li>
-            <a href={"mailto:" + siteSettings.email}>Email</a>
-          </li>
+          <li><a href={"https://wa.me/" + waDigits} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><Link href="/contact">WeChat</Link></li>
+          <li><a href={"mailto:" + siteSettings.email}>Email</a></li>
         </ul>
-
         <p className={styles.reach}>{siteSettings.reachLine}</p>
         <p className={styles.copy}>© {year} {siteSettings.businessName}</p>
       </div>

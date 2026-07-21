@@ -36,10 +36,7 @@ export default function ContactPage() {
 
           <div className={styles.channel}>
             <div className={styles.chTop}><span className={styles.chName}>WeChat</span></div>
-            <div className={styles.copyRow}>
-              <span className={styles.copyField}>{siteSettings.wechatId}</span>
-              <CopyButton value={siteSettings.wechatId} label="WeChat ID" />
-            </div>
+            <p className={styles.chNote}>Scan the QR code to add us on WeChat.</p>
           </div>
 
           <div className={styles.channel}>
@@ -57,16 +54,12 @@ export default function ContactPage() {
           <p className={styles.desktopNote}>Desktop · scan to start on your phone</p>
           <div className={styles.qrPair}>
             <div className={styles.qr}>
-              <div className={styles.code} role="img" aria-label="WhatsApp QR — generated in the media phase">
-                <span className={styles.qrPending}>QR pending</span>
-              </div>
-              <p className={styles.cap}>WhatsApp — click to chat</p>
+              <img className={styles.code} src="/qr/whatsapp-qr.png" alt="WhatsApp QR code to chat with Showpro Production" width={240} height={240} />
+              <p className={styles.cap}>WhatsApp — scan to chat</p>
             </div>
             <div className={styles.qr}>
-              <div className={styles.code} role="img" aria-label="WeChat QR — added in the media phase">
-                <span className={styles.qrPending}>QR pending</span>
-              </div>
-              <p className={styles.cap}>WeChat — add us</p>
+              <img className={styles.code} src={siteSettings.wechatQr} alt="WeChat QR code to add Showpro Production" width={240} height={240} />
+              <p className={styles.cap}>WeChat — scan to add</p>
             </div>
           </div>
           <p className={styles.privacyNote}>No form. No data stored. Anything you share when you message us is used only to reply.</p>

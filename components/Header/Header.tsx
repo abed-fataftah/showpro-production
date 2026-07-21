@@ -9,8 +9,8 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
-        <Link href="/" className={styles.wordmark}>
-          <span className={styles.mark} aria-hidden="true" />
+        <Link href="/" className={styles.wordmark} aria-label={`${siteSettings.businessName} — home`}>
+          <img className={styles.mark} src="/logo/mark.png" alt="" width={218} height={232} />
           {siteSettings.businessName}
         </Link>
         <nav className={styles.nav} aria-label="Primary">

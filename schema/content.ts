@@ -5,7 +5,7 @@ const nonEmpty = z.string().min(1);
 export const siteSettingsSchema = z.strictObject({
   businessName: nonEmpty,
   whatsappNumber: nonEmpty,
-  wechatId: nonEmpty,
+  wechatId: nonEmpty.optional(),
   wechatQr: nonEmpty,
   email: nonEmpty,
   whatsappOpener: nonEmpty,
@@ -17,8 +17,8 @@ export const heroSchema = z.strictObject({
   eyebrow: nonEmpty,
   headline: nonEmpty,
   subhead: nonEmpty,
-  poster: nonEmpty,
-  videoSrc: nonEmpty,
+  poster: nonEmpty.optional(),
+  videoSrc: nonEmpty.optional(),
 });
 
 export const serviceSchema = z.strictObject({ title: nonEmpty, description: nonEmpty });

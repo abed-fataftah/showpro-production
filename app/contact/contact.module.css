@@ -18,8 +18,7 @@
 .desktopNote { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin: 0 0 var(--space-4); }
 .qrPair { display: flex; gap: var(--space-4); flex-wrap: wrap; }
 .qr { width: 150px; }
-.code { width: 150px; height: 150px; border: 1px solid var(--line); border-radius: 6px; background: #fff; display: flex; align-items: center; justify-content: center; }
-.qrPending { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6E6C68; }
+.code { width: 150px; height: 150px; border: 1px solid var(--line); border-radius: 6px; background: #fff; display: block; object-fit: contain; }
 .cap { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.04em; margin-top: 10px; text-align: center; }
 .privacyNote { color: var(--faint); font-size: 0.78rem; margin-top: var(--space-5); max-width: 40ch; }
 

@@ -4,28 +4,7 @@
   border-radius: 4px; overflow: hidden; border: 1px solid var(--line); background: var(--surface);
 }
 .feat { border-color: var(--gold-deep); }
-.ph { position: relative; width: 100%; min-height: 120px; }
-.ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.5)); }
-
-.plum  { background: linear-gradient(200deg, #2a2333, #14121b); }
-.gold  { background: linear-gradient(200deg, #2e2618, #14110a); }
-.teal  { background: linear-gradient(200deg, #182a2b, #0d1516); }
-.steel { background: linear-gradient(200deg, #20242e, #101216); }
-.wine  { background: linear-gradient(200deg, #2c1a20, #150c10); }
-.ink   { background: linear-gradient(200deg, #1c1d24, #0d0e12); }
-
-.chip {
-  position: absolute; top: 12px; left: 12px; z-index: 3;
-  font-family: var(--sans); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
-  background: rgba(10,10,11,.6); border: 1px solid var(--line); padding: 4px 9px; border-radius: 100px; backdrop-filter: blur(4px);
-}
-.feat .chip { border-color: var(--gold-deep); color: var(--gold); }
-.label { position: absolute; left: 14px; bottom: 12px; z-index: 3; font-size: 12px; color: var(--text); letter-spacing: 0.02em; }
-.play {
-  position: absolute; right: 14px; bottom: 14px; z-index: 3;
-  width: 0; height: 0; border-style: solid; border-width: 6px 0 6px 11px;
-  border-color: transparent transparent transparent var(--gold); opacity: 0.9;
-}
-
+.img { width: 100%; height: auto; display: block; }
+.video { width: 100%; aspect-ratio: 16 / 9; display: block; background: #000; }
 @media (max-width: 820px) { .masonry { column-count: 2; } }
 @media (max-width: 520px) { .masonry { column-count: 1; } }

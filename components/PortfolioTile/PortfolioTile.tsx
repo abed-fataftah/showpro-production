@@ -1,24 +1,28 @@
+import type { PortfolioItem } from "../../schema/content";
 import styles from "./PortfolioTile.module.css";
 
-export type TileTone = "plum" | "gold" | "teal" | "steel" | "wine" | "ink";
-export interface PortfolioTileData {
-  readonly type: "photo" | "video";
-  readonly ratio: string;
-  readonly tone: TileTone;
-  readonly label: string;
-  readonly featured?: boolean;
-}
+export function PortfolioTile({ item }: { item: PortfolioItem }) {
+  const cls = [styles.tile, item.featured ? styles.feat : undefined].filter(Boolean).join(" ");
+  const reveal = item.featured ? "feature" : "tile";
 
-export function PortfolioTile({ type, ratio, tone, label, featured }: PortfolioTileData) {
-  const cls = [styles.tile, featured ? styles.feat : undefined].filter(Boolean).join(" ");
-  const phCls = [styles.ph, styles[tone]].filter(Boolean).join(" ");
-  return (
-    <div className={cls} data-reveal={featured ? "feature" : "tile"} role="img" aria-label={`Portfolio media pending — ${label} (${type})`}>
-      <div className={phCls} style={{ aspectRatio: ratio }}>
-        <span className={styles.chip}>{type === "video" ? "Video" : "Photo"}</span>
-        {type === "video" ? <span className={styles.play} aria-hidden="true" /> : null}
-        <span className={styles.label}>{label}</span>
+  if (item.type === "video") {
+    return (
+      <div className={cls} data-reveal={reveal}>
+        <video className={styles.video} poster={item.poster} controls muted preload="none" playsInline aria-label={item.alt}>
+          <source src={item.src} type="video/mp4" />
+        </video>
       </div>
+    );
+  }
+
+  const webpLg = item.src.replace(/\.jpg$/i, ".webp");
+  const webpSm = webpLg.replace(/-lg\.webp$/i, "-sm.webp");
+  return (
+    <div className={cls} data-reveal={reveal}>
+      <picture>
+        <source type="image/webp" srcSet={`${webpSm} 800w, ${webpLg} 1600w`} sizes="(max-width: 820px) 50vw, 33vw" />
+        <img className={styles.img} src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+      </picture>
     </div>
   );
 }

@@ -7,8 +7,7 @@
 }
 .inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); height: 68px; transition: height 0.35s var(--ease); }
 .wordmark { display: inline-flex; align-items: center; gap: var(--space-3); font-family: var(--serif); font-size: 1.3rem; letter-spacing: 0.02em; color: var(--text); }
-.mark { width: 22px; height: 22px; border: 1px solid var(--gold); transform: rotate(45deg); position: relative; flex: none; }
-.mark::after { content: ""; position: absolute; inset: 5px; background: var(--gold); opacity: .85; }
+.mark { height: 38px; width: auto; display: block; flex: none; }
 .nav { display: flex; gap: var(--space-4); margin-left: auto; margin-right: var(--space-4); color: var(--muted); font-size: 0.95rem; }
 .nav a:hover { color: var(--text); }
 .actions { display: flex; align-items: center; gap: var(--space-3); flex: none; }

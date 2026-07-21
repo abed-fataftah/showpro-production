@@ -1,6 +1,5 @@
 import type { Seo } from "../schema/content";
-// OG image stays a placeholder until the media pass supplies a no-venue still (SEO-005).
-const OG = "og/PLACEHOLDER-og.jpg";
+const OG = "og/og.jpg";
 export const seo = {
   home: {
     title: "Showpro Production — Live Show Production | Macau & Malaysia",

@@ -43,4 +43,4 @@ next-env.d.ts
 # Raw media source — never committed (optimised delivery files come later)
 /media-src/
 # keep the example env (documents build vars); real env files stay ignored
-!.env.example
+!.env.examplemedia-work/

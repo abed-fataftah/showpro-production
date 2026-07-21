@@ -1,12 +1,13 @@
 import type { SiteSettings } from "../schema/content";
-// DEVELOPMENT PLACEHOLDERS ONLY (CS §6.8). Owner values are outstanding blockers (PO §D-25).
+// Real owner-approved values (F-007). wechatId + wechatQr remain placeholders:
+// the WeChat handle + cropped QR image belong to the pictures/QR pass (kept placeholder so production stays gated).
 export const siteSettings = {
-  businessName: "[Business Name]",
-  whatsappNumber: "+000 0000 0000",
+  businessName: "Showpro Production",
+  whatsappNumber: "+60 17-500 2680",
   wechatId: "[wechat-id-placeholder]",
   wechatQr: "qr/PLACEHOLDER-wechat-qr.png",
-  email: "hello@[businessname].com",
-  whatsappOpener: "[PLACEHOLDER] Enquiry opener pending owner sign-off (COPY-003).",
-  reachLine: "[PLACEHOLDER] Reach line pending owner sign-off (COPY-003).",
-  tagline: "[PLACEHOLDER] Footer tagline pending owner sign-off (COPY-003).",
+  email: "Showpromacau@gmail.com",
+  whatsappOpener: "Hi — I'd like to enquire about a live show for an event.",
+  reachLine: "Macau · Hong Kong · Malaysia · Singapore",
+  tagline: "Live show production — Macau & Malaysia.",
 } as const satisfies SiteSettings;

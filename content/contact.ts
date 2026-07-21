@@ -1,11 +1,11 @@
 import type { ContactBand, ContactPage } from "../schema/content";
 export const contactBand = {
-  eyebrow: "[PLACEHOLDER] Contact-band eyebrow",
-  heading: "[PLACEHOLDER] Contact-band heading pending owner copy (COPY-003).",
+  eyebrow: "Let's begin",
+  heading: "Let's talk about your event.",
 } as const satisfies ContactBand;
 
 export const contactPage = {
-  eyebrow: "[PLACEHOLDER] Contact eyebrow",
-  heading: "[PLACEHOLDER] Contact heading pending owner copy (COPY-003).",
-  intro: "[PLACEHOLDER] Contact intro pending owner copy (COPY-003).",
+  eyebrow: "Contact",
+  heading: "Let's talk about your event.",
+  intro: "Tell us the date, the venue, and what you have in mind — we'll take it from there. WhatsApp is the fastest way to reach us.",
 } as const satisfies ContactPage;

@@ -1,13 +1,15 @@
 import type { EventType, EventTypesSection } from "../schema/content";
 // Exactly four (CR-007 / D-13), enforced by the schema.
+// NOTE: schema requires a non-empty description per type, but the design lists titles only.
+// Descriptions mirror the title text (approved copy) until/unless owner supplies one-liners.
 export const eventTypes = [
-  { title: "[PLACEHOLDER] Event type one", description: "[PLACEHOLDER] Pending owner copy." },
-  { title: "[PLACEHOLDER] Event type two", description: "[PLACEHOLDER] Pending owner copy." },
-  { title: "[PLACEHOLDER] Event type three", description: "[PLACEHOLDER] Pending owner copy." },
-  { title: "[PLACEHOLDER] Event type four", description: "[PLACEHOLDER] Pending owner copy." },
+  { title: "Hotel & resort private events", description: "Hotel & resort private events." },
+  { title: "Casino premium-membership private events", description: "Casino premium-membership private events." },
+  { title: "Corporate events", description: "Corporate events." },
+  { title: "Mall festival & parade dance shows", description: "Mall festival & parade dance shows." },
 ] as const satisfies readonly EventType[];
 
 export const eventTypesSection = {
-  eyebrow: "[PLACEHOLDER] Event types eyebrow",
-  intro: "[PLACEHOLDER] Event types intro pending owner copy (COPY-003).",
+  eyebrow: "Types of Events",
+  intro: "We work with professional event teams on:",
 } as const satisfies EventTypesSection;

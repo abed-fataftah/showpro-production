@@ -1,7 +1,6 @@
-.section { padding-block: var(--space-7); background: var(--surface); }
+.section { padding-block: var(--space-section); background: var(--surface); }
 .list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
 .item { display: flex; align-items: baseline; gap: var(--space-3); padding: var(--space-4); border: 1px solid var(--line); border-radius: 6px; background: var(--raised); }
 .idx { font-family: var(--serif); color: var(--gold); font-size: 1rem; min-width: 2.5ch; }
 .title { margin: 0; font-size: 1.05rem; }
-
 @media (max-width: 640px) { .list { grid-template-columns: 1fr; } }

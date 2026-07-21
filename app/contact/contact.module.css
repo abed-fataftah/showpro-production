@@ -1,0 +1,26 @@
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); align-items: start; margin-top: var(--space-6); }
+
+.channels { display: flex; flex-direction: column; gap: var(--space-4); }
+.channel { border: 1px solid var(--line); border-radius: 6px; padding: var(--space-4); background: var(--surface); }
+.primary { border-color: var(--gold-deep); background: linear-gradient(180deg, rgba(200,169,106,.08), transparent); }
+.chTop { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-3); }
+.chName { font-family: var(--serif); font-size: 1.4rem; }
+.tag { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+.chNote { color: var(--muted); font-size: 0.9rem; margin: 0 0 var(--space-3); }
+.copyRow { display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-3); }
+.copyField {
+  flex: 1; min-width: 0; font-size: 0.9rem; color: var(--text); background: var(--raised);
+  border: 1px solid var(--line); border-radius: 4px; padding: 12px 14px; letter-spacing: 0.02em;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.copyField a:hover { color: var(--gold); }
+
+.desktopNote { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin: 0 0 var(--space-4); }
+.qrPair { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+.qr { width: 150px; }
+.code { width: 150px; height: 150px; border: 1px solid var(--line); border-radius: 6px; background: #fff; display: flex; align-items: center; justify-content: center; }
+.qrPending { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6E6C68; }
+.cap { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.04em; margin-top: 10px; text-align: center; }
+.privacyNote { color: var(--faint); font-size: 0.78rem; margin-top: var(--space-5); max-width: 40ch; }
+
+@media (max-width: 820px) { .grid { grid-template-columns: 1fr; gap: var(--space-5); } }

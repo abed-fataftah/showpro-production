@@ -1,4 +1,13 @@
-.band { padding-block: var(--space-8); background: var(--surface); border-top: 1px solid var(--line); }
-.inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-4); }
-.eyebrow { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+.band { padding-block: var(--space-8); position: relative; overflow: hidden; background: var(--bg); border-top: 1px solid var(--line); }
+.band::before {
+  content: ""; position: absolute; top: -30%; left: 50%; transform: translateX(-50%);
+  width: 120%; height: 120%; z-index: 0;
+  background: radial-gradient(50% 55% at 50% 0%, rgba(200,169,106,.14), transparent 62%);
+  animation: bandBreathe 7s ease-in-out infinite; pointer-events: none;
+}
+.inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-4); }
+.eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+.eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--gold-deep); display: inline-block; }
 .heading { margin: 0; max-width: 20ch; }
+@keyframes bandBreathe { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .band::before { animation: none !important; } }

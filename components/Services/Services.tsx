@@ -7,14 +7,15 @@ export function Services() {
     <section className={styles.section}>
       <div className="container">
         <SectionHeading eyebrow={servicesSection.eyebrow} title={servicesSection.heading} />
-        <ol className={styles.list}>
+        <ol className={styles.list} data-reveal>
           {services.map((svc, i) => (
             <li key={i} className={styles.item}>
               <span className={styles.num}>{String(i + 1).padStart(2, "0")}</span>
-              <div>
+              <div className={styles.text}>
                 <h3 className={styles.title}>{svc.title}</h3>
                 <p className={styles.desc}>{svc.description}</p>
               </div>
+              <span className={styles.go} aria-hidden="true">→</span>
             </li>
           ))}
         </ol>

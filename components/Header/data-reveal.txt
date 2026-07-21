@@ -1,0 +1,17 @@
+components/SectionHeading/SectionHeading.tsx
+  <div className={styles.head}>            →  <div className={styles.head} data-reveal>
+
+components/Services/Services.tsx
+  <ol className={styles.list}>             →  <ol className={styles.list} data-reveal>
+
+components/Credibility/Credibility.tsx
+  <ul className={styles.points}>           →  <ul className={styles.points} data-reveal>
+
+components/EventTypes/EventTypes.tsx
+  <ul className={styles.list}>             →  <ul className={styles.list} data-reveal>
+
+components/ContactBand/ContactBand.tsx
+  <div className={`container ${styles.inner}`}>   →   <div className={`container ${styles.inner}`} data-reveal>
+
+components/PortfolioTeaser/PortfolioTeaser.tsx
+  <div className={styles.head}>            →  <div className={styles.head} data-reveal>

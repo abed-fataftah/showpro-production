@@ -9,7 +9,7 @@ export function EventTypes() {
     <section className={styles.section}>
       <div className="container">
         <SectionHeading eyebrow={eventTypesSection.eyebrow} title={eventTypesSection.intro} />
-        <ul className={styles.list}>
+        <ul className={styles.list} data-reveal>
           {eventTypes.map((et, i) => (
             <li key={i} className={styles.item}>
               <span className={styles.idx} aria-hidden="true">{NUMERALS[i] ?? String(i + 1)}</span>

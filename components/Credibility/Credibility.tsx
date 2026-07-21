@@ -8,9 +8,10 @@ export function Credibility() {
       <div className="container">
         <SectionHeading eyebrow={credibility.eyebrow} title={credibility.heading} />
         <p className={styles.body}>{credibility.body}</p>
-        <ul className={styles.points}>
+        <ul className={styles.points} data-reveal>
           {credibility.points.map((pt, i) => (
             <li key={i} className={styles.point}>
+              <span className={styles.mk} aria-hidden="true" />
               <h3 className={styles.pointTitle}>{pt.title}</h3>
               <p className={styles.pointBody}>{pt.body}</p>
             </li>

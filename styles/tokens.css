@@ -1,31 +1,21 @@
-/* tokens.css — VISUAL DIRECTION PLACEHOLDERS (CS §7 / D-10 / §P3-12).
-   Palette ported from prototype.html; type faces are system placeholders.
-   Final colours + typefaces are pending the owner's brand assets (PO §D-25 #7)
-   and are governed by the placeholder policy (CS §6.8). Not final brand values. */
+/* tokens.css — palette ported from prototype.html.
+   Typefaces via next/font (Cormorant Garamond + Inter) in app/layout.tsx (F-008).
+   Final brand colours/typefaces still pending owner brand assets (PO §D-25 #7). */
 :root {
-  --bg: #0A0A0B;
-  --surface: #141416;
-  --raised: #1C1C1F;
-  --line: #2A2A2E;
-  --text: #F5F3EF;
-  --muted: #A8A6A1;
-  --faint: #6E6C68;
-  --gold: #C8A96A;
-  --gold-deep: #A8874B;
+  --bg: #0A0A0B; --surface: #141416; --raised: #1C1C1F; --line: #2A2A2E;
+  --text: #F5F3EF; --muted: #A8A6A1; --faint: #6E6C68;
+  --gold: #C8A96A; --gold-deep: #A8874B;
 
-  /* Placeholder faces pending brand assets — editorial serif/clean sans direction (D-10). */
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --serif: var(--font-serif), Georgia, "Times New Roman", serif;
+  --sans: var(--font-sans), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --maxw: 1200px;
   --ease: cubic-bezier(.22, .61, .36, 1);
 
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 16px;
-  --space-4: 24px;
-  --space-5: 40px;
-  --space-6: 64px;
-  --space-7: 96px;
-  --space-8: 128px;
+  --space-1: 4px; --space-2: 8px; --space-3: 16px; --space-4: 24px;
+  --space-5: 40px; --space-6: 64px; --space-7: 96px; --space-8: 128px;
+
+  /* prototype-fidelity spacing (F-008 increment c) */
+  --pad-x: 32px;          /* page side padding (prototype .wrap) */
+  --space-section: 110px; /* prototype section vertical padding */
 }

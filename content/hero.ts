@@ -1,6 +1,6 @@
 import type { Hero } from "../schema/content";
 export const hero = {
-  eyebrow: "Live Show Production — Macau & Malaysia",
-  headline: "We build the show your event is remembered for.",
-  subhead: "From casting and choreography to music, costume, props, and on-site direction, we create and produce bespoke live entertainment for casinos, hotels, resorts, and corporate events across Macau, Hong Kong, Malaysia, and Singapore.",
+  eyebrow: "Production Show Across Asia",
+  headline: "Bringing Live To Life",
+  subhead: "Showpro Production is a cutting edge international creative and talent agency that elevates any event or function. Our extensive and diverse network of world class talent provides breath taking and unforgettable experiences! We provide a complete end-to-end bespoke service, from conception to execution making sure we bring your vision to life.",
 } as const satisfies Hero;

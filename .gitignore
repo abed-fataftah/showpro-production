@@ -43,4 +43,10 @@ next-env.d.ts
 # Raw media source — never committed (optimised delivery files come later)
 /media-src/
 # keep the example env (documents build vars); real env files stay ignored
-!.env.examplemedia-work/
+!.env.example
+
+# media processing workspace (raw sources + scripts)
+/media-work/
+
+# cloudflare wrangler local state
+.wrangler/
